@@ -3,7 +3,12 @@ const { Client, Events, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const client = new Client({ intents: [
+	GatewayIntentBits.Guilds, 
+	GatewayIntentBits.GuildMessages, 
+	GatewayIntentBits.MessageContent,
+	GatewayIntentBits.GuildMembers
+] });
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
@@ -14,7 +19,7 @@ client.once(Events.ClientReady, c => {
 client.on('guildMemberAdd', member => {
 	console.log(member.tag);
 	console.log(member.guild.systemChannel);
-	member.guild.systemChannel.send('@' + member.tag + ' Hast du Problem?');
+	member.guild.systemChannel.send('<@' + member.id + '>' + ' Hast du ein Problem? (Taschenkontrolle)');
 });
 
 client.on('messageCreate', message => {
@@ -29,13 +34,19 @@ client.on('messageCreate', message => {
 		'behinderte',
 		'schwuchtel',
 		'trottl',
-		'maximalpigmentierte'
+		'trotteline',
+		'maximalpigmentierte',
+		'gschissener',
+		'oaschloch',
+		'schiarch',
+		'deppad',
+		'fetznschädl'
 	];
 
 	antworten = [
 		'Darf er so?',
-		'Hätte er mir gesagt',
-		'Abow'
+		'Hätte er mir gesagt!',
+		'Abow!'
 	]
 
 	antwortIndex = Math.floor(Math.random() * 3 + 0);
