@@ -25,10 +25,21 @@ client.on('messageCreate', message => {
 		'hurensohn', 
 		'nega', 
 		'nigga', 
-		'opfer', 
-		'behinderter', 
-		'behinderte'
+		'opfer',
+		'behinderte',
+		'schwuchtel',
+		'trottl',
+		'maximalpigmentierte'
 	];
+
+	antworten = [
+		'Darf er so?',
+		'Hätte er mir gesagt',
+		'Abow'
+	]
+
+	antwortIndex = Math.floor(Math.random() * 3 + 0);
+	console.log(antwortIndex);
 
 	if (message.mentions.members.size != 0) {
 		victim = message.mentions.members.first();
@@ -36,7 +47,7 @@ client.on('messageCreate', message => {
 
 		schimpfwoerter.forEach(wort => {
 			if (message.content.toLowerCase().includes(wort)) {
-				message.reply('<@' + victim + '>' + ' Darf er so?');
+				message.reply('<@' + victim + '>' + antworten[antwortIndex]);
 			}
 		});
 	}
