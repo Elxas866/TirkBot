@@ -19,12 +19,27 @@ client.on('guildMemberAdd', member => {
 
 client.on('messageCreate', message => {
 	console.log(message.content);
-	schimpfwoerter = ['huan', 'hurensohn', 'nega', 'nigga', 'opfer', 'behinderter', 'behinderte'];
-	schimpfwoerter.forEach(wort => {
-		if (message.content.toLowerCase().includes(wort)) {
-			message.reply("Darf er so?");
-		}
-	});
+
+	schimpfwoerter = [
+		'huan', 
+		'hurensohn', 
+		'nega', 
+		'nigga', 
+		'opfer', 
+		'behinderter', 
+		'behinderte'
+	];
+
+	if (message.mentions.members.size != 0) {
+		victim = message.mentions.members.first();
+		console.log('Victim: ' + victim);
+		
+		schimpfwoerter.forEach(wort => {
+			if (message.content.toLowerCase().includes(wort)) {
+				message.reply("Darf er so?");
+			}
+		});
+	}
 });
 
 // Log in to Discord with your client's token
