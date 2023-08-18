@@ -33,10 +33,10 @@ client.on('messageCreate', message => {
 	if (message.mentions.members.size != 0) {
 		victim = message.mentions.members.first();
 		console.log('Victim: ' + victim);
-		
+
 		schimpfwoerter.forEach(wort => {
 			if (message.content.toLowerCase().includes(wort)) {
-				message.reply("Darf er so?");
+				message.reply('<@' + victim + '>' + ' Darf er so?');
 			}
 		});
 	}
