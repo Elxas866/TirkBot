@@ -36,11 +36,18 @@ client.on('messageCreate', message => {
 		'trottl',
 		'trotteline',
 		'maximalpigmentierte',
-		'gschissener',
+		'gschissene',
 		'oaschloch',
 		'schiarch',
 		'deppad',
-		'fetznschädl'
+		'fetznschädl',
+		'missgeburt',
+		'bastard',
+		'penis',
+		'schwanz',
+		'kalb',
+		'hmar',
+		'geringverdiener'
 	];
 
 	antworten = [
