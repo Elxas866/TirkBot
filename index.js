@@ -17,7 +17,7 @@ client.once(Events.ClientReady, c => {
 });
 
 client.on('guildMemberAdd', member => {
-	console.log(member.tag);
+	console.log(member.tag + 'joined');
 	console.log(member.guild.systemChannel);
 	member.guild.systemChannel.send('<@' + member.id + '>' + ' Hast du ein Problem? (Taschenkontrolle)');
 });
@@ -28,7 +28,7 @@ client.on('messageCreate', message => {
 	schimpfwoerter = [
 		'huan', 
 		'hurensohn', 
-		'nega', 
+		'neger', 
 		'nigga', 
 		'opfer',
 		'behinderte',
@@ -47,7 +47,8 @@ client.on('messageCreate', message => {
 		'schwanz',
 		'kalb',
 		'hmar',
-		'geringverdiener'
+		'geringverdiener',
+		'idiot'
 	];
 
 	antworten = [
@@ -56,7 +57,7 @@ client.on('messageCreate', message => {
 		'Abow!'
 	]
 
-	antwortIndex = Math.floor(Math.random() * 3 + 0);
+	antwortIndex = Math.floor(Math.random() * antworten.length + 0);
 	console.log(antwortIndex);
 
 	if (message.mentions.members.size != 0) {
