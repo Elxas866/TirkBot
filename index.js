@@ -23,7 +23,6 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('messageCreate', message => {
-	console.log(message.content);
 
 	schimpfwoerter = [
 		'huan', 
@@ -54,7 +53,10 @@ client.on('messageCreate', message => {
 	antworten = [
 		'Darf er so?',
 		'Hätte er mir gesagt!',
-		'Abow!'
+		'Abow!',
+		'A B O W',
+		'woah, woah, woah',
+		'Ansage wallah'
 	]
 
 	antwortIndex = Math.floor(Math.random() * antworten.length + 0);
